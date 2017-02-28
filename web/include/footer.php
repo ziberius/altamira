@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12 contact">
                 
-                <label>Contáctenos <a href="tel:+572265280"><img src="/main/img/icono_fono.png" height="13" />(+572) 265280</a></label>
+                <label>Contáctenos <a href="tel:+56572265280"><img src="/main/img/icono_fono.png" height="13" />(+56)572265280</a></label>
                 <table>
                     <tr>
                         <td><img src="/main/img/icono_mail.png" height="10" /></td>
