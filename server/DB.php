@@ -28,7 +28,7 @@ class conectarDB {
     }
 
     public function getDestacados() {
-        $sql = 'SELECT p2.codigo,p2.titulo,strip_tags(p2.descrip) as descrip,p2.uf,p2.clp,p2.tipo,p2.construido,p2.dormitorio,p2.ban,p2.comuna,p2.mapa,p2.direccion_real,p2.terreno, ';
+        $sql = 'SELECT p2.codigo,p2.titulo,p2.descrip as descrip,p2.uf,p2.clp,p2.tipo,p2.construido,p2.dormitorio,p2.ban,p2.comuna,p2.mapa,p2.direccion_real,p2.terreno, ';
         $sql .= "substring(p.url,46) as id_prop,f.numero ";
         $sql .= ' FROM propaganda p left join fotos f on f.id_prop = substring(p.url,46) and f.id_ft = (select min(f2.id_ft) from fotos f2 where f2.id_prop = f.id_prop) ';
         $sql .= ' left join propiedad p2 on f.id_prop = p2.id_prop ';
@@ -49,7 +49,7 @@ class conectarDB {
 
     public function getRows($table, $conditions = array()) {
         $sql = 'SELECT ';
-        $sql .= "codigo,titulo,strip_tags(descrip) as descrip,direccion_real,dire,tipo,comuna,clp,uf,construido,terreno,dormitorio,ban,mapa,operacion,ifnull(f.numero,0) as numero,ifnull(p.id_prop,0) as id_prop";
+        $sql .= "codigo,titulo,descrip as descrip,direccion_real,dire,tipo,comuna,clp,uf,construido,terreno,dormitorio,ban,mapa,operacion,ifnull(f.numero,0) as numero,ifnull(p.id_prop,0) as id_prop";
         $sql .= ' FROM ' . $table . ' p left join fotos f on f.id_prop = p.id_prop and f.id_ft = (select min(f2.id_ft) from fotos f2 where f2.id_prop = f.id_prop) ';
 
         $sql .= ' WHERE estado = 1 ';
