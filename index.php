@@ -20,15 +20,6 @@
                 ajustarMargenes();
             });
 
-            $(window).on('mouseup',function () {
-                $("#menuXs").animate({width: "0px"}, 500, function () {
-                    $("#menuXs").hide();
-                });
-            });
-
-            $('#menuXs').on('mouseup',function (event) {
-                event.stopPropagation();
-            });
             $(document).ready(function () {
                 ajustarMargenes();
             });
@@ -55,7 +46,8 @@
     <body ng-cloak ng-controller="mainController" class="full page {{ pageClass}}">
         <?php require_once('web/include/header.php'); ?> 
         <div id="menuXs" class="menuXs">
-            <ul id="ulMenuXs" class="nav navbar" style="margin-left:20px">
+            <button class="btn btn-default btn-xs center-block" style="margin-top:20px;" type="button" ng-click="esconderMenu()"><i class="glyphicon glyphicon-arrow-left"></i></button>
+            <ul id="ulMenuXs" ng-click="esconderMenu()" class="nav navbar" style="margin-left:20px;">
                 <li><a class="selectedItem" href="#/">Altamira</a></li>
                 <li><a href="#mapa">Mapa</a></li>
                 <li><a href="#servicios">Servicios</a></li>
