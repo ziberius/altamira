@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12 contact">
                 
-                <label>Contáctenos <a href="tel:+56572265280"><img src="/main/img/icono_fono.png" height="13" />(+56)572265280</a></label>
+                <label>Contáctenos</label>
                 <table>
                     <tr>
                         <td><img src="/main/img/icono_mail.png" height="10" /></td>
@@ -40,7 +40,9 @@
                 </table>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <button ng-click="modalPropiedades()" id="btnPropDest" style="margin-top:5%" class="btn btn-primary btn-lg">Ver Propiedades Destacadas</button>
+                <button ng-click="modalPropiedades()" id="btnPropDest" style="margin-top:5%" class="btn btn-primary">Ver Propiedades Destacadas</button>
+                <div style="margin-top:5%"><a hfref="">Llámenos al:</a> <a href="tel:+56572265280" class="btn btn-primary"><img src="/main/img/icono_fono.png" height="13" />(+56)572265280</a></a></div>
+                
             </div>
         </div><!--/.row -->
 

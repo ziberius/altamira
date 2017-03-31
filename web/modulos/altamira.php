@@ -42,20 +42,21 @@
         <div class="col-md-12">
             <form class="navbar-form navbar-left paginacion" role="search">
                 <div class="form-group">
-                    <button class="btn btn-default btn-xs" ng-disabled="start === 0" type="button" ng-click="anterior()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                    <button class="btn btn-primary btn-xs" ng-disabled="start === 0" type="button" ng-click="anterior()">Mostrar propiedades anteriores</button>
                 </div>
                 <div class="form-group">
-                    <span>Registros {{start + 1}} a {{end}} de {{total}}</span>
+                    <span>Mostrando propiedades {{start + 1}} a {{end}} de un total de {{total}}</span>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-default btn-xs" ng-disabled="end === total" type="button" ng-click="siguiente()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                    <button class="btn btn-primary btn-xs" ng-disabled="end === total" type="button" ng-click="siguiente()">Mostrar siguientes propiedades</button>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style='border-left:1px solid gray;padding-left:4px'>
+                    Mostrar
                     <select ng-model="limit" ng-change="cambioLimite()" class="form-control" id="selLimit">
-                        <option selected value="10">10</option>
+                        <option value="10">10</option>
                         <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select> 
+                        <option selected value="100">100</option>
+                    </select> propiedades por página
                 </div>
 
             </form>
@@ -87,20 +88,21 @@
         <div class="col-md-12">
             <form class="navbar-form navbar-left paginacion" role="search">
                 <div class="form-group">
-                    <button class="btn btn-default btn-xs" ng-disabled="start === 0" type="button" ng-click="anterior()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                    <button class="btn btn-primary btn-xs" ng-disabled="start === 0" type="button" ng-click="anterior()">Mostrar propiedades anteriores</button>
                 </div>
                 <div class="form-group">
-                    <span>Registros {{start + 1}} a {{end}} de {{total}}</span>
+                    <span>Mostrando propiedades {{start + 1}} a {{end}} de un total de {{total}}</span>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-default btn-xs" ng-disabled="end === total" type="button" ng-click="siguiente()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                    <button class="btn btn-primary btn-xs" ng-disabled="end === total" type="button" ng-click="siguiente()">Mostrar siguientes propiedades</button>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style='border-left:1px solid gray;padding-left:4px'>
+                    Mostrar
                     <select ng-model="limit" ng-change="cambioLimite()" class="form-control" id="selLimit">
-                        <option selected value="10">10</option>
+                        <option value="10">10</option>
                         <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select> 
+                        <option selected value="100">100</option>
+                    </select> propiedades por página
                 </div>
 
             </form>

@@ -815,7 +815,7 @@ scotchApp.controller("userController", function ($scope, $rootScope, $http, $loc
     $scope.propiedades = [];
     $scope.tempUserData = {};
     $scope.start = 0;
-    $scope.limit = "10";
+    $scope.limit = "100";
     $scope.end = ($scope.start) + parseInt($scope.limit);
     $scope.tipo = "normal";
     $scope.desc = "";
