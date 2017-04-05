@@ -10,7 +10,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
         <strong>Error:</strong><span></span>
     </div>    
-    <div class="row">
+    <div class="row resultados">
         <div class="col-md-12">
             <div class="textoBlanco">
                 <h1>Encuentra tu hogar aquí</h1>
@@ -72,15 +72,16 @@
                         <p style="font-weight: bold">{{ propiedad.dire | limitTo: 40 }}{{propiedad.dire.length > 40 ? '...' : ''}}</p>
                         <span ng-show="propiedad.operacion === '1'"><span style="font-weight: bold">Reseña:</span> {{ propiedad.descrip | limitTo: 90 }}{{propiedad.descrip.length > 90 ? '...' : ''}}</span>
                         <p><span style="font-weight: bold">Precio:</span>
-                            <span ng-show="{{propiedad.uf !== '0'}}"> {{propiedad.uf}} UF  / $ {{valoruf * propiedad.uf | number:2}}</span>
-                            <span ng-show="{{propiedad.uf === '0'}}">${{propiedad.clp | number}} CLP</span>
+                            <span ng-show="{{propiedad.uf !== '0'}}"> {{propiedad.uf}} UF  / $ {{valoruf * propiedad.uf| number:2}}</span>
+                            <span ng-show="{{propiedad.uf === '0'}}">${{propiedad.clp| number}} CLP</span>
                         </p>                        
                         <span ng-show="propiedad.operacion === '1' && propiedad.tipo !== '1'"><span style="font-weight: bold">Tamaño:</span> {{propiedad.construido}} m&#178;</span>
                         <span ng-show="propiedad.operacion === '1' && propiedad.tipo === '1'"><span style="font-weight: bold">Construido:</span> {{propiedad.construido}} m&#178;</span>
                         <p>{{propiedad.dormitorio}} dormitorio(s) / {{propiedad.ban}} baño(s)</p>
                     </div>
                 </div>
-            </div>            
+            </div>  
+          
 
         </div>
     </div>
@@ -110,5 +111,5 @@
     </div>
 
     <?php require_once('../include/modales.php'); ?>
-    
+
 </div>

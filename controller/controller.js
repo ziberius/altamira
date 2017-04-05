@@ -815,7 +815,7 @@ scotchApp.controller("userController", function ($scope, $rootScope, $http, $loc
     $scope.propiedades = [];
     $scope.tempUserData = {};
     $scope.start = 0;
-    $scope.limit = "100";
+    $scope.limit = "10";
     $scope.end = ($scope.start) + parseInt($scope.limit);
     $scope.tipo = "normal";
     $scope.desc = "";
@@ -841,7 +841,7 @@ scotchApp.controller("userController", function ($scope, $rootScope, $http, $loc
         }
         $scope.getRecords();
     };
-
+    
     $scope.buscar = function (tipo) {
         $scope.desc = $("#inputBuscar").val();
         $scope.tipoPropiedad = $("#selectTipo").val();
@@ -857,7 +857,7 @@ scotchApp.controller("userController", function ($scope, $rootScope, $http, $loc
     };
 
     $scope.getRecords = function (params) {
-
+        $.scrollTo($(".resultados"), 200);
         if ($scope.tipo === "normal") {
             params = {
                 'type': 'view',

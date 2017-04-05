@@ -544,3 +544,11 @@ a.glyphicon{text-decoration: none;cursor: pointer;}
 #navbar ul li{
     margin-right:30px;
 }
+
+#tareaDesc{
+    cursor:default;
+}
+
+.thumbArriendo, .icono-servicio{
+    cursor:pointer;
+}

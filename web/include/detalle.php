@@ -36,18 +36,7 @@
                 <input ng-model="inputPrecioUf" type="text" ng-disabled="true" class="form-control" id="inputPrecioUf">
             </div>
         </div>
-        <div ng-show="inputPrecioUf !== '0'" class="form-group">
-            <label for="inputPrecioClpCalc" class=" col-lg-3 control-label">Precio CLP</label>
-            <div class="col-lg-9">
-                <input ng-model="inputPrecioClpCalc" type="text" ng-disabled="true" class="form-control" id="inputPrecioClpCalc">
-            </div>
-        </div>
-        <div ng-show="inputPrecioUf === '0'" class="form-group">
-            <label for="inputPrecioClp" class=" col-lg-3 control-label">Precio CLP</label>
-            <div class="col-lg-9">
-                <input ng-model="inputPrecioClp" type="text" ng-disabled="true" class="form-control" id="inputPrecioClp">
-            </div>
-        </div>
+
     </div>
     <div class="col-md-6">
         <div class="form-group">
@@ -74,12 +63,18 @@
                 <input ng-model="inputBanos" type="text" ng-disabled="true" class="form-control" id="inputBanos">
             </div>
         </div>
-        <div class="form-group">
-            <label for="tareaDesc" class=" col-lg-3 control-label">Descripción</label>
+        <div ng-show="inputPrecioUf !== '0'" class="form-group">
+            <label for="inputPrecioClpCalc" class=" col-lg-3 control-label">Precio CLP</label>
             <div class="col-lg-9">
-                <textarea  ng-model="inputTareaDesc" ng-disabled="true" class="form-control" rows="5" id="tareaDesc"></textarea>
+                <input ng-model="inputPrecioClpCalc" type="text" ng-disabled="true" class="form-control" id="inputPrecioClpCalc">
             </div>
-        </div>  
+        </div>        
+        <div ng-show="inputPrecioUf === '0'" class="form-group">
+            <label for="inputPrecioClp" class=" col-lg-3 control-label">Precio CLP</label>
+            <div class="col-lg-9">
+                <input ng-model="inputPrecioClp" type="text" ng-disabled="true" class="form-control" id="inputPrecioClp">
+            </div>
+        </div>        
         <div class="form-group">
             <button data-dismiss="modal" data-backdrop="false"  ng-click="compartir()" title="Compartir" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></button>
             <button data-dismiss="modal" data-backdrop="false"  ng-click="contacto()" title="Contacto" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></button>
