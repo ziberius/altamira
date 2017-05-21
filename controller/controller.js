@@ -13,6 +13,18 @@ scotchApp.factory('Scopes', function () {
     };
 });
 
+scotchApp.service('propiedadService', function ($sce,$filter) {
+            var myService = this;
+            myService.generaPropiedad = function (data) {
+
+                var propiedad = data;
+                propiedad.descripcion = $filter('limitTo')(propiedad.descrip, 90, 0);
+                propiedad.descripcion = $sce.trustAsHtml(propiedad.descripcion);
+                propiedad.descripcionLong = $sce.trustAsHtml(propiedad.descrip);
+                return propiedad;
+            };
+        });
+
 scotchApp.service('modales', function ($location, $rootScope, $http, Scopes) {
 
     this.compartir = function () {
@@ -810,7 +822,7 @@ scotchApp.controller('contactoController', function ($scope, $rootScope, $http, 
     };
 });
 
-scotchApp.controller("userController", function ($scope, $rootScope, $http, $location, modales, Scopes) {
+scotchApp.controller("userController", function ($scope, $rootScope, $http, propiedadService, modales, Scopes) {
     Scopes.store('myCtrl', $scope);
     $scope.propiedades = [];
     $scope.tempUserData = {};
@@ -877,11 +889,15 @@ scotchApp.controller("userController", function ($scope, $rootScope, $http, $loc
         }
 
         $rootScope.loading = true;
+        var propiedades = [];
         $http.post('../../main/server/action.php', params).then(function (res) {
             $rootScope.loading = false;
             $scope.valoruf = ufToNumber($rootScope.valoruf);
             if (res.data !== null && res.data.status === 'OK') {
-                $scope.propiedades = res.data.records;
+                $.each(res.data.records,function(i,item){
+                    var obj =  propiedadService.generaPropiedad(item);
+                    propiedades.push(obj);
+                });
                 $scope.total = res.data.total;
             } else {
                 $scope.propiedades = null;
@@ -889,6 +905,7 @@ scotchApp.controller("userController", function ($scope, $rootScope, $http, $loc
                 showMessage("No se encontraron resultados");
 
             }
+            $scope.propiedades = propiedades;
             $scope.end = ($scope.start) + parseInt($scope.limit);
             if ($scope.end > $scope.total) {
                 $scope.end = $scope.total;
@@ -902,22 +919,23 @@ scotchApp.controller("userController", function ($scope, $rootScope, $http, $loc
 
     $scope.detalle = function (propiedad) {
         $(".navfoto").scrollTo("0", 100);
+        var propiedadDet = propiedadService.generaPropiedad(propiedad);
         $scope._Index = 0;
-        $scope.inputCodigo = propiedad.codigo;
-        $scope.inputTitulo = propiedad.dire;
+        $scope.inputCodigo = propiedadDet.codigo;
+        $scope.inputTitulo = propiedadDet.dire;
         $scope.inputRegion = "Tarapacá (I)";
-        $scope.inputTareaDesc = propiedad.descrip;
-        $scope.inputDireccion = propiedad.direccion_real;
-        $scope.inputTipo = obtenerTipo(propiedad.operacion);
-        $scope.inputComuna = obtenerComuna(propiedad.comuna);
-        $scope.inputPrecioUf = propiedad.uf;
-        $scope.inputPrecioClp = propiedad.clp;
-        $scope.inputPrecioClpCalc = addCommas(propiedad.uf * $scope.valoruf);
-        $scope.inputConstruido = propiedad.construido;
-        $scope.inputTerreno = propiedad.terreno;
-        $scope.inputDormitorios = propiedad.dormitorio;
-        $scope.inputBanos = propiedad.ban;
-        $scope.id_prop = propiedad.id_prop;
+        $scope.inputTareaDesc = propiedadDet.descripcionLong;
+        $scope.inputDireccion = propiedadDet.direccion_real;
+        $scope.inputTipo = obtenerTipo(propiedadDet.operacion);
+        $scope.inputComuna = obtenerComuna(propiedadDet.comuna);
+        $scope.inputPrecioUf = propiedadDet.uf;
+        $scope.inputPrecioClp = propiedadDet.clp;
+        $scope.inputPrecioClpCalc = addCommas(propiedadDet.uf * $scope.valoruf);
+        $scope.inputConstruido = propiedadDet.construido;
+        $scope.inputTerreno = propiedadDet.terreno;
+        $scope.inputDormitorios = propiedadDet.dormitorio;
+        $scope.inputBanos = propiedadDet.ban;
+        $scope.id_prop = propiedadDet.id_prop;
         if ($scope.inputTipo === "Venta") {
             $scope.datosContacto1 = "Vende: Alberto Correa Marín";
             $scope.datosContacto2 = "Teléfonos: (57) 2 265288 / 9 9885 27 50 / 9 9417 57 93";

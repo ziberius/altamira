@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <textarea  ng-model="inputTareaDesc" ng-disabled="true" class="form-control" rows="5" id="tareaDesc"></textarea>
+                        <div  data-ng-bind-html="inputTareaDesc" ng-disabled="true" class="form-control" style="height:100px;overflow-y: scroll" id="tareaDesc"></div>
                     </div>
                 </div>
                 <div class="row">

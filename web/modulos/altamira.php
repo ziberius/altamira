@@ -69,8 +69,8 @@
                 <div class="thumbnail" ng-click="detalle(propiedad)">
                     <img class="img-rounded" style="height:130px" ng-src="../../../desk/img/propiedad/{{propiedad.id_prop}}/{{propiedad.numero}}.jpeg" alt="...">
                     <div class="caption">
-                        <p style="font-weight: bold">{{ propiedad.dire | limitTo: 40 }}{{propiedad.dire.length > 40 ? '...' : ''}}</p>
-                        <span ng-show="propiedad.operacion === '1'"><span style="font-weight: bold">Reseña:</span> {{ propiedad.descrip | limitTo: 90 }}{{propiedad.descrip.length > 90 ? '...' : ''}}</span>
+                        <p style="font-weight: bold">{{ propiedad.dire | limitTo: 40  }}{{propiedad.dire.length > 40 ? '...' : ''}}</p>
+                        <span ng-show="propiedad.operacion === '1'"><span style="font-weight: bold">Reseña:</span><span data-ng-bind-html="propiedad.descripcion"></span>{{propiedad.descripcion.length > 90 ? '...' : ''}}</span>
                         <p><span style="font-weight: bold">Precio:</span>
                             <span ng-show="{{propiedad.uf !== '0'}}"> {{propiedad.uf}} UF  / $ {{valoruf * propiedad.uf| number:2}}</span>
                             <span ng-show="{{propiedad.uf === '0'}}">${{propiedad.clp| number}} CLP</span>

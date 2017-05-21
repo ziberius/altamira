@@ -42,7 +42,7 @@
 }
 
 .cb-slideshow li:nth-child(1) span { 
-    background-image: url(../img/altamira/04.jpg);
+    background-image: url(../img/altamira/mar01.jpeg);
 }
 
 .cb-slideshow li:nth-child(2) span { 
@@ -54,7 +54,7 @@
     animation-delay: 6s; 
 }
 .cb-slideshow li:nth-child(3) span { 
-    background-image: url(../img/altamira/12.jpg);
+    background-image: url(../img/altamira/mar02.jpeg);
     -webkit-animation-delay: 12s;
     -moz-animation-delay: 12s;
     -o-animation-delay: 12s;
