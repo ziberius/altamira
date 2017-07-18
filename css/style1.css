@@ -42,11 +42,11 @@
 }
 
 .cb-slideshow li:nth-child(1) span { 
-    background-image: url(../img/altamira/mar01.jpeg);
+    background-image: url(../img/altamira/latirana01.jpg);
 }
 
 .cb-slideshow li:nth-child(2) span { 
-    background-image: url(../img/altamira/11.jpg);
+    background-image: url(../img/altamira/latirana02.jpg);
     -webkit-animation-delay: 6s;
     -moz-animation-delay: 6s;
     -o-animation-delay: 6s;
@@ -54,7 +54,7 @@
     animation-delay: 6s; 
 }
 .cb-slideshow li:nth-child(3) span { 
-    background-image: url(../img/altamira/mar02.jpeg);
+    background-image: url(../img/altamira/latirana03.jpg);
     -webkit-animation-delay: 12s;
     -moz-animation-delay: 12s;
     -o-animation-delay: 12s;
@@ -62,7 +62,7 @@
     animation-delay: 12s; 
 }
 .cb-slideshow li:nth-child(4) span { 
-    background-image: url(../img/altamira/14.jpg);
+    background-image: url(../img/altamira/latirana04.jpg);
     -webkit-animation-delay: 18s;
     -moz-animation-delay: 18s;
     -o-animation-delay: 18s;
@@ -70,12 +70,12 @@
     animation-delay: 18s; 
 }
 .cb-slideshow li:nth-child(5) span { 
-    background-image: url(../img/altamira/24.jpg);
-    -webkit-animation-delay: 18s;
-    -moz-animation-delay: 18s;
-    -o-animation-delay: 18s;
-    -ms-animation-delay: 18s;
-    animation-delay: 18s; 
+    background-image: url(../img/altamira/latirana05.jpg);
+    -webkit-animation-delay: 24s;
+    -moz-animation-delay: 24s;
+    -o-animation-delay: 24s;
+    -ms-animation-delay: 24s;
+    animation-delay: 24s; 
 }
 .cb-slideshow li:nth-child(2) div { 
     -webkit-animation-delay: 6s;
